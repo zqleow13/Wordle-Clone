@@ -1,72 +1,25 @@
-body {
-    background-color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+html, body {
+    height: 100%;
 }
 
-hr {
-    width: 500px;
+body {
+    display: grid;
+    place-items: center;
+    height: 100%;
 }
 
 #title {
     font-size: 36px;
     font-weight: bold;
-    color: white;
+    color: black;
 }
 
-.row1 {
-    margin: auto;
+#game {
+    background: red;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
 }
-.row2 {
-    margin: auto;
-}
+
+.tile {
     
-.row3 {
-    margin: auto;   
-}
-.row4 {
-    margin: auto;
-}
-.row5 {
-    margin: auto;
-}
-.row6 {
-    margin: auto;
-}
-
-#sq1 {
-    padding: 1em;
-    font-size: 16pt;
-    width: 15px;
-    height: 15px;
-}
-#sq2 {
-    padding: 1em;
-    font-size: 16pt;
-    width: 15px;
-    height: 15px;
-}
-#sq3 {
-    padding: 1em;
-    font-size: 16pt;
-    width: 15px;
-    height: 15px;
-}
-#sq4 {
-    padding: 1em;
-    font-size: 16pt;
-    width: 15px;
-    height: 15px;
-}
-#sq5 {
-    padding: 1em;
-    font-size: 16pt;
-    width: 15px;
-    height: 15px;
-}
-#sq6 {
-    padding: 1em;
-    font-size: 16pt;
-    width: 15px;
-    height: 15px;
 }
