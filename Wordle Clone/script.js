@@ -34,14 +34,33 @@ grid.appendChild(fragment);
 // when user press button, the button works and the letter appear
 
 const buttonElements = document.querySelectorAll("button");
+let row = 1;
+let letter = 1;
+const wordForTheDay = 'Queue';
+const wordElements = document.querySelectorAll(".row");
 
 buttonElements.forEach((element) => {
-    element.addEventListener("click", 
-    keypress(element.attributes["data-key"].value));
+    element.addEventListener("click", function() {
+        keypress(element.attributes["data-key"].value)
+    });
 });
 
+
+function populateWord(key) {
+    if(letter < 6) {
+        wordElements[row - 1].querySelectorAll('.tile')[letter - 1].innerText = key;
+        letter++;
+    }
+}
+
 function keypress(key) {
-    if 
+    if (key.toLowerCase() === 'enter') {
+        // enterWord();
+    } else if (key.toLowerCase() === 'del') {
+        // deleteLetter();
+    } else {
+        populateWord(key);
+    }
     
 }
 
