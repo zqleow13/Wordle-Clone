@@ -4,8 +4,17 @@ html, body {
 
 body {
     display: grid;
+    text-align: center;
     place-items: center;
     height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background: white;
+}
+
+header {
+    font-size: 36px;
+    font-weight: bold;
 }
 
 #title {
@@ -14,12 +23,18 @@ body {
     color: black;
 }
 
-#game {
-    background: red;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+.row {
+    display: flex;
 }
+    
+
 
 .tile {
-    
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: black solid 1px;
+    font-size: 2rem;
 }

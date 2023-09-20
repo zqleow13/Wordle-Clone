@@ -6,34 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=0, user-scalable=no">
 
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-    <h1 id="title">Wordle</h1>
+    <header>Wordle</header>
+    <br>
     <hr>
-    <br>
-    <div id="board">
-        <!--This is your game area
-        TODO: 1) Add 6 rows of input. Users should be able to enter 5-letter word only-->
-        <p id="guess1"></p>
-        <p id="guess2"></p>
-        <p id="guess3"></p>
-        <p id="guess4"></p>
-        <p id="guess5"></p>
-        <p id="guess6"></p>
-        <!--2) After hitting enter key, the box for each letter should change fill colour according to the character of the letter. Green = Correct, Yellow = Correct Letter, Wrong Position Red = Wrong
-        3) Users should be able to go to next input after each attempt until after Attempt 6
-        4) If user gets the answer correctly, end the input loop(?) and congratulate user
-        5) If user guesses wrongly, then show correct answer 
-        6) Add list of 5-letter words to the game using API or just a list -->
-    </div>
-
-    <br>
-    <h1 id="answer">
-        <!-- Insert answer here -->
-    </h1>
-    
+    <div id="game">
+        <div class="row"> 
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+        </div>
+        <div class="row">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+        </div>
+        <div class="row">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+        </div>
+        <div class="row">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+        </div>
+        <div class="row">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+        </div>
+        <div class="row">
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+            <div class="tile"></div>
+        </div>
+    </div> 
     
     
 </body>
