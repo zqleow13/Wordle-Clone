@@ -36,7 +36,7 @@ grid.appendChild(fragment);
 const buttonElements = document.querySelectorAll('button');
 let row = 1;
 let letter = 1;
-const wordForTheDay = "Queue";
+const wordForTheDay = "lemon";
 const wordElements = document.querySelectorAll(".row");
 
 buttonElements.forEach((element) => {
@@ -104,6 +104,22 @@ function keypress(key) {
         populateWord(key);
     }
     
+}
+
+// If user makes the correct word, stop allowing input and say congrats
+
+function correctWord() {
+    const letterElements = wordElements[row - 1].querySelectorAll('.tile');
+    letterElements.forEach((element, index) => {
+        const indexOfLetterInWordOfTheDay = wordForTheDay.toLowerCase().indexOf
+        (element.innerText.toLowerCase());
+
+        if (indexOfLetterInWordOfTheDay === index) {
+        letter = 1;
+        alert('Congrats! You won!');
+    }
+});
+
 }
 
 
