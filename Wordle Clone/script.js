@@ -47,7 +47,7 @@ buttonElements.forEach((element) => {
 
 
 function populateWord(key) {
-    if(letter < 6) {
+    if (letter < 6) {
         wordElements[row - 1].querySelectorAll('.tile')[letter - 1].innerText = key;
         letter++;
     }
@@ -78,6 +78,20 @@ function enterWord() {
         alert('Not enough letters');
     } else {
         checkWord();
+        row += 1;
+        letter = 1;
+    }
+}
+
+function deleteLetter() {
+    const letterElements = wordElements[row - 1].querySelectorAll('.tile');
+    for (let index = letterElements.length - 1; index > 0; index--) {
+        const element = letterElements[index];
+        if (element.innerText !== '') {
+            element.innerText === '';
+            letter--;
+            break;
+        }
     }
 }
 
