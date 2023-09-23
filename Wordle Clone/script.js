@@ -85,10 +85,10 @@ function enterWord() {
 
 function deleteLetter() {
     const letterElements = wordElements[row - 1].querySelectorAll('.tile');
-    for (let index = letterElements.length - 1; index > 0; index--) {
+    for (let index = letterElements.length - 1; index >= 0; index--) {
         const element = letterElements[index];
         if (element.innerText !== '') {
-            element.innerText === '';
+            element.innerText = '';
             letter--;
             break;
         }
@@ -99,7 +99,7 @@ function keypress(key) {
     if (key.toLowerCase() === 'enter') {
         enterWord();
     } else if (key.toLowerCase() === 'del') {
-        // deleteLetter();
+        deleteLetter();
     } else {
         populateWord(key);
     }
