@@ -109,12 +109,16 @@ function deleteLetter() {
 }
 
 function keypress(key) {
-    if (key.toLowerCase() === 'enter') {
+    if (!gameOver) {
+        if (key.toLowerCase() === 'enter') {
         enterWord();
-    } else if (key.toLowerCase() === 'del') {
-        deleteLetter();
+        } else if (key.toLowerCase() === 'del') {
+            deleteLetter();
+        } else {
+            populateWord(key);
+        }
     } else {
-        populateWord(key);
+        alert('Game over! Try again tomorrow!');
     }
     
 }
