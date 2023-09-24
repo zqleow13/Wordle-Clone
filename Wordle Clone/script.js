@@ -38,6 +38,8 @@ let row = 1;
 let letter = 1;
 const wordForTheDay = "lemon";
 const wordElements = document.querySelectorAll(".row");
+let gameOver = false;
+let guessedCorrectly = false;
 
 buttonElements.forEach((element) => {
     element.addEventListener('click', function() {
@@ -55,12 +57,14 @@ function populateWord(key) {
 
 function checkWord() {
     const letterElements = wordElements[row - 1].querySelectorAll(".tile");
+    let numOfCorrectAlphabets = 0;
 
     letterElements.forEach((element, index) => {
         const indexOfLetterInWordOfTheDay = wordForTheDay.toLowerCase().indexOf
         (element.innerText.toLowerCase());
 
         if (indexOfLetterInWordOfTheDay === index) {
+            numOfCorrectAlphabets++;
             element.classList.add('word-green');
         } else if (indexOfLetterInWordOfTheDay > 0) {
             element.classList.add('word-yellow');
@@ -68,6 +72,15 @@ function checkWord() {
             element.classList.add('word-grey'); 
         }
     });
+
+    if (numOfCorrectAlphabets === 5) {
+        gameOver = true;
+        guessedCorrectly = true;
+        alert('Congrats! You have guessed correctly!');
+    } else if (row === 6) {
+        gameOver = true;
+        alert(`Sorry, you did not guess correctly. The answer is ${wordForTheDay}.`);
+    }
 }
 
 
@@ -106,20 +119,5 @@ function keypress(key) {
     
 }
 
-// If user makes the correct word, stop allowing input and say congrats
-
-function correctWord() {
-    const letterElements = wordElements[row - 1].querySelectorAll('.tile');
-    letterElements.forEach((element, index) => {
-        const indexOfLetterInWordOfTheDay = wordForTheDay.toLowerCase().indexOf
-        (element.innerText.toLowerCase());
-
-        if (indexOfLetterInWordOfTheDay === index) {
-        letter = 1;
-        alert('Congrats! You won!');
-    }
-});
-
-}
 
 
